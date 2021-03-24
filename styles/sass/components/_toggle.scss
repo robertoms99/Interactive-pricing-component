@@ -21,7 +21,6 @@
 		transition: all 120ms;
 	}
 	&[data-toggle-checked],
-	&:hover,
 	&:active {
 		background-color: var(--color-accent);
 	}
