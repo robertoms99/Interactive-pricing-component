@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./styles/index.min.css" />
+  <script defer crossorigin="anonymous" src="/src/index.js" type="module"></script>
+  <title>Frontend Mentor | Profile card component</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="banner">
+      <h1 class="heading heading--primary banner__heading">
+        Simple, traffic-based pricing
+      </h1>
+      <h3 class="heading heading--tertiary banner__heading">
+        Sign-up for our 30-day trial. No credit card required.
+      </h3>
+    </div>
+    <div class="pricing">
+      <div class="pricing__content">
+        <span class="pricing__pages-views">
+          <span class="js-pages-views">100k</span>
+          Pageviews
+        </span>
+        <div class="slide pricing__slide" data-slide="pricing-slide" data-slide-value="50000">
+          <span class="slide__thumb">
+            <img src="./images/icon-slider.svg" alt="" data-slide-thumb="pricing-slide">
+          </span>
+        </div>
+        <span class="pricing__price">
+          <span class="js-price pricing__number">$16.00</span>/month
+        </span>
+        <div class="pricing__billing">
+          <div class="pricing__monthly-billing">
+            Monthly Billing
+            <div class="toggle pricing__billing-toggle">
+            </div>
+          </div>
+          <div class="pricing__yearly-billing">
+            Yearly Billing
+            <span class="badge pricing__billing-badge">
+              25%
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="pricing__divider"></div>
+      <div class="pricing__footer">
+        <ul class="pricing__list">
+          <li class="pricing__item">
+            Unlimited websites
+          </li>
+          <li class="pricing__item">
+            100% data ownership
+          </li>
+          <li class="pricing__item">
+            Email reports
+          </li>
+        </ul>
+        <button class="button button--cta button--primary pricing__button">
+          Start my trial
+        </button>
+      </div>
+
+
+
+
+    </div>
+
+  </div>
+</body>
+
+</html>

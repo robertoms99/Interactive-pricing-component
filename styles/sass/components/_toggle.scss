@@ -1,0 +1,34 @@
+.toggle {
+	--toggle-thumb-dimension: 1em;
+	--gutter-thumb-dimension: 0.25em;
+	display: inline-block;
+	padding: var(--gutter-thumb-dimension);
+	width: calc((var(--toggle-thumb-dimension) * 2) + (var(--gutter-thumb-dimension) * 2));
+	height: calc(var(--toggle-thumb-dimension) + (var(--gutter-thumb-dimension) * 2));
+	border-radius: 1.5rem;
+	background-color: var(--color-dark-grey);
+	position: relative;
+	cursor: pointer;
+	&::after {
+		content: '';
+		position: absolute;
+		top: var(--gutter-thumb-dimension);
+		left: var(--gutter-thumb-dimension);
+		border-radius: 50%;
+		background-color: white;
+		height: var(--toggle-thumb-dimension);
+		width: var(--toggle-thumb-dimension);
+		transition: all 120ms;
+	}
+	&[data-toggle-checked],
+	&:hover,
+	&:active {
+		background-color: var(--color-accent);
+	}
+	&[data-toggle-checked] {
+		&::after {
+			left: auto;
+			right: var(--gutter-thumb-dimension);
+		}
+	}
+}

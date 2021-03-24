@@ -1,0 +1,41 @@
+.slide {
+	--calculated-percentage: 50;
+	--slide-thumb-dimension: 3em;
+	--slide-thumb-radio: calc(var(--slide-thumb-dimension) / 2);
+	display: inline-block;
+	width: 100%;
+	height: 0.7rem;
+	background-color: var(--color-dark-grey);
+	border-radius: 0.5rem;
+	display: flex;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
+	isolation: isolate;
+	&__thumb {
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		left: calc((var(--calculated-percentage) * 1%) - var(--slide-thumb-radio));
+		width: var(--slide-thumb-dimension);
+		height: var(--slide-thumb-dimension);
+		border-radius: 50%;
+		background-color: var(--color-accent);
+		z-index: 1;
+		&:hover,
+		&:active {
+			background-color: var(--color-dark-accent);
+			box-shadow: 0 0.7rem 1.5rem var(--color-dark-accent);
+		}
+	}
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		background-color: var(--color-accent);
+		width: calc(var(--calculated-percentage) * 1%);
+	}
+}

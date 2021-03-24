@@ -1,0 +1,20 @@
+.container {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background: url('/images/bg-pattern.svg') 0 0 / 100% 50vh, white;
+	background-repeat: no-repeat;
+}
+
+.banner {
+	padding: 2em 0;
+	margin-bottom: 1em;
+	background: url('/images/pattern-circles.svg') no-repeat center/auto 80%;
+	max-width: 90%;
+	&__heading {
+		color: var(--color-primary);
+		text-align: center;
+	}
+}

@@ -1,0 +1,11 @@
+.heading {
+	&--tertiary {
+		font-size: 0.7em;
+		font-weight: 100;
+		max-width: 80%;
+		margin: auto;
+	}
+	&--primary {
+		font-size: 1.25em;
+	}
+}
