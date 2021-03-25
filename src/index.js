@@ -6,7 +6,6 @@ priceByViews.set(500000, 24)
 priceByViews.set(1000000, 36)
 
 const totalValues = priceByViews.size
-// const steps = 100 / (- 1)
 const slideSteps = [...priceByViews.keys()].reduce((slideSteps, key, index) => {
   slideSteps[index + 1] = key
   return slideSteps
@@ -16,6 +15,7 @@ const init = () => {
   let isSliderThumbFocused = false
   const slider = document.querySelector('[data-slide]')
   const priceIndicator = document.querySelector('.js-price')
+  const pagesViewsIndicator = document.querySelector('.js-pages-views')
   const sliderInlineStyles = slider.style
   const sliderThumb = slider.querySelector('[data-slide-thumb]')
   const toggle = document.querySelector('[data-toggle]')
@@ -64,9 +64,18 @@ const init = () => {
     setPriceByView(getSlideViewsValue())
   }
 
+  const formatUnits = number => {
+    const intlFormat = number =>
+      new Intl.NumberFormat().format(Math.round(number * 10) / 10)
+    if (number >= 1000000) return intlFormat(number / 1000000) + 'M'
+    if (number >= 1000) return intlFormat(number / 1000) + 'k'
+    return intlFormat(number)
+  }
+
   const setPriceByView = views => {
     let price = priceByViews.get(views)
     price = validIsBillingIsActive() ? price * 0.75 : price
+    pagesViewsIndicator.textContent = formatUnits(views)
     priceIndicator.textContent = `$${price.toFixed(2)}`
   }
 
